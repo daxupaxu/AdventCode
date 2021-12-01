@@ -2,15 +2,18 @@ const { input } = require("./input.js");
 
 // task1
 
-const increasedArray = [];
-input.reduce((prev, current) => {
-  if (current > prev) {
-    increasedArray.push("increased");
-  }
-  return current;
-});
+const calculateIncrementalAmount = (arr) => {
+  let increasedTimes = 0;
+  arr.reduce((prev, current) => {
+    if (current > prev) {
+      increasedTimes += 1;
+    }
+    return current;
+  });
+  return increasedTimes;
+};
 
-console.log(increasedArray.length);
+console.log(calculateIncrementalAmount(input));
 
 // task2
 const windows = [];
@@ -19,12 +22,4 @@ input.reduce((prev, current, idx) => {
   return current;
 });
 
-const increasedWindowsArray = [];
-windows.reduce((prev, current) => {
-  if (current > prev) {
-    increasedWindowsArray.push("increased");
-  }
-  return current;
-});
-
-console.log(increasedWindowsArray.length);
+console.log(calculateIncrementalAmount(windows));
