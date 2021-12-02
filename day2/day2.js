@@ -39,11 +39,8 @@ data.forEach((item) => {
   const v = parseInt(i[1], 10);
   switch (k) {
     case "forward":
-      {
-        newPos.horizontal += v;
-        newPos.depth += newPos.aim * v;
-      }
-
+      newPos.horizontal += v;
+      newPos.depth += newPos.aim * v;
       break;
     case "up":
       newPos.aim -= v;
